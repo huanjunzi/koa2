@@ -81,4 +81,8 @@ router.post('/updateUser', async (ctx, next) => {
     message: "failed"
   }
 })
+
+router.get('/downloadExcel', async (ctx, next) => {
+  return ctx.body = await mysql.downloadExecel(ctx.request.query,ctx)
+})
 module.exports = router
